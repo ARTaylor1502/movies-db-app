@@ -1,15 +1,11 @@
-import {useState} from "react";
-
 function SearchBar(props) {
-    const [searchTerm, setSearchTerm] = useState('');
-
     return (
         <div className="input-group">
             <div className="form-outline">
                 <label className="form-label d-none" htmlFor="search">Search</label>
-                <input type="search" id="search" className="form-control" onChange={event => setSearchTerm(event.target.value)}/>
+                <input type="search" id="search" className="form-control" onChange={event => props.setSearchTerm(event.target.value)}/>
             </div>
-            <button type="button" className="btn btn-primary" onClick={() => {props.searchMovies(searchTerm)}}>
+            <button type="button" className="btn btn-primary" onClick={() => {props.updateMovies()}}>
                 <i className="fas fa-search"/>
             </button>
         </div>
