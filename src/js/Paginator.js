@@ -12,7 +12,7 @@ function Paginator(props) {
             }
         }
 
-        return pages;
+        return pages.sort();
     }
 
     const getNextButtons = () => {
@@ -29,7 +29,7 @@ function Paginator(props) {
             }
         }
 
-        return pages;
+        return pages.sort();
     }
 
     return (
