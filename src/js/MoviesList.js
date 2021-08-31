@@ -1,11 +1,11 @@
 import MovieThumbnail from "./MovieThumbnail";
 
-function MovieList(props) {
+function MoviesList(props) {
     return (
         props.movies.map((movie) =>
-            <MovieThumbnail movie={movie} key={movie.id}/>
+            <MovieThumbnail movie={movie} key={movie.id} setSelectedMovieId={props.setSelectedMovieId}/>
         )
     )
 }
 
-export default MovieList;
+export default MoviesList;

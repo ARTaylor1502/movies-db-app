@@ -38,15 +38,15 @@ function Paginator(props) {
                 <span>Showing {props.config.results.length} of {props.config.total_results}</span>
             </div>
             <div className="col-sm-8">
-                <button onClick={() => {props.updateMovies(1)}}>&#171;</button>
+                <button onClick={() => {props.updateResults(1)}}>&#171;</button>
                 {getPrevButtons().map((pageNumber) =>
-                    <button className="btn" onClick={() => {props.updateMovies(pageNumber)}}>{pageNumber}</button>
+                    <button className="btn" onClick={() => {props.updateResults(pageNumber)}} key={pageNumber}>{pageNumber}</button>
                 )}
                 <button className="btn" disabled>{props.config.page}</button>
                 {getNextButtons().map((pageNumber) =>
-                    <button className="btn" onClick={() => {props.updateMovies(pageNumber)}}>{pageNumber}</button>
+                    <button className="btn" onClick={() => {props.updateResults(pageNumber)}} key={pageNumber}>{pageNumber}</button>
                 )}
-                <button onClick={() => {props.updateMovies(props.config.total_pages)}}>&#187;</button>
+                <button onClick={() => {props.updateResults(props.config.total_pages)}}>&#187;</button>
             </div>
         </div>
     )
